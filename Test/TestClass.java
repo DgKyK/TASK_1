@@ -1,5 +1,3 @@
-import Model.Client.Client;
-import Model.Client.ClientBuilder;
 import Model.FareEntity.FareList;
 import Model.FareEntity.MoBilFare;
 import org.junit.Assert;
@@ -27,7 +25,4 @@ public class TestClass {
             Assert.assertEquals(temp.size(), 0);
         }
     }
-    /*
-    @Test
-    public void */
 }

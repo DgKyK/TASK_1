@@ -5,14 +5,11 @@ import DB.DBFare;
 import Model.Client.ClientBuilder;
 import View.View;
 
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class FareList {
-    View view;
+    private View view;
     private ArrayList<MoBilFare> fareList;
-    public enum faresName {FeelFreeFare, SuperMenFare, UnlimFare}
 
     public FareList(){
         view = new View();
@@ -66,7 +63,7 @@ public class FareList {
     }
 
     public void sortByMonthPay(){
-        Collections.sort(fareList,(o1,o2) -> (int)(o1.getMonthPay() - o2.getMonthPay()));
+        this.fareList.sort(((o1, o2) -> (int)(o1.getMonthPay() - o2.getMonthPay())));
     }
     @Override
     public String toString(){

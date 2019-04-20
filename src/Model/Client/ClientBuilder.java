@@ -15,5 +15,4 @@ public class ClientBuilder {
         }
         return resultClientList;
     }
-
 }
