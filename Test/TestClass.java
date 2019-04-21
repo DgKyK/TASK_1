@@ -25,4 +25,10 @@ public class TestClass {
             Assert.assertEquals(temp.size(), 0);
         }
     }
+
+    @Test
+    public void testCreateFareList(){
+        FareList test = new FareList();
+        Assert.assertTrue(test.createFareList());
+    }
 }

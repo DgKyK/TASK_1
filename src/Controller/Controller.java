@@ -4,6 +4,11 @@ import Model.FareEntity.FareList;
 import Model.Model;
 import View.View;
 
+/**
+ *
+ * @author Alex Tokarenko
+ * @version 1.0
+ */
 public class Controller {
     Model model;
     View view;
@@ -26,13 +31,12 @@ public class Controller {
         fareList.sortByMonthPay();
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.SORTED_BY_PAYMENT),
                                             fareList.toString()));
-        System.out.println(fareList.findFareClientsLessThen(10));
+        view.printMessage(fareList.findFareClientsLessThen(10).toString());
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.BYE_MESSAGE)));
 
 
 
     }
 
-    /* Help methods */
 
 }

@@ -9,6 +9,7 @@ public class Client {
         number = "666666";
     }
 
+    /* Getters */
     public String getName() {
         return name;
     }
