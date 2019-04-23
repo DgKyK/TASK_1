@@ -1,11 +1,11 @@
-package Model.Client;
+package model.client;
 
 public class Client {
     private String name;
     private String number;
 
     public Client(){
-        name = "Client";
+        name = "client";
         number = "666666";
     }
 

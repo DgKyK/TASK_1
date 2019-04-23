@@ -1,4 +1,4 @@
-package Model.FareEntity;
+package model.fare;
 
 public interface Fare {
 

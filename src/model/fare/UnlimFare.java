@@ -1,19 +1,19 @@
-package Model.FareEntity;
+package model.fare;
 
-public class SuperMenFare extends MoBilFare {
-    private int numberOfSms;
+public class UnlimFare extends MoBilFare {
+    private int abroadCallMinutes;
 
-    public SuperMenFare(){
+    public UnlimFare(){
 
     }
 
-    public SuperMenFare(String fareName, int monthPay, int numberOfSms){
+    public UnlimFare(String fareName, int monthPay, int abroadCallMinutes){
         super(fareName, monthPay);
-        this.numberOfSms = numberOfSms;
+        this.abroadCallMinutes = abroadCallMinutes;
     }
 
-    public int getNumberOfSms() {
-        return numberOfSms;
+    public int getAbroadCallMinutes() {
+        return abroadCallMinutes;
     }
 
     @Override
@@ -21,7 +21,7 @@ public class SuperMenFare extends MoBilFare {
         return "\n------------\nFare name : " + this.getFareName() +
                 "\nNumber of clients : " + this.calculateClients() +
                 "\nMonth pay : " + this.getMonthPay() +
-                "\nNumber of SMS : " + this.getNumberOfSms();
+                "\nAbroad calls minutes : " + this.abroadCallMinutes;
     }
 
     @Override

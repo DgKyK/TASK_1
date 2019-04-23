@@ -1,12 +1,13 @@
-package Model.FareEntity;
+package model.fare;
 
-import Model.Client.Client;
+import model.client.Client;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class MoBilFare implements Fare {
     private String fareName;
-    private ArrayList<Client> clientsList;
+    private List<Client> clientsList;
     private int monthPay;
 
     public MoBilFare(){
@@ -29,7 +30,7 @@ public abstract class MoBilFare implements Fare {
         return monthPay;
     }
 
-    public ArrayList<Client> getClientsList() {
+    public List<Client> getClientsList() {
         return clientsList;
     }
 
@@ -39,7 +40,7 @@ public abstract class MoBilFare implements Fare {
         this.fareName = fareName;
     }
 
-    public void setClientsList(ArrayList<Client> clientsList) {
+    public void setClientsList(List<Client> clientsList) {
         this.clientsList = clientsList;
     }
 

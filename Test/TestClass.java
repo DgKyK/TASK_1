@@ -1,5 +1,5 @@
-import Model.FareEntity.FareList;
-import Model.FareEntity.MoBilFare;
+import model.fare.FareList;
+import model.fare.MoBilFare;
 import org.junit.Assert;
 import org.junit.Test;
 

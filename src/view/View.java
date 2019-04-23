@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

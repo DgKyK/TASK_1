@@ -1,4 +1,4 @@
-package Model.FareEntity;
+package model.fare;
 
 public class FeelFreeFare extends MoBilFare {
     private int megabytesOfInternet;

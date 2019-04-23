@@ -1,8 +1,8 @@
-package Controller;
+package controller;
 
-import Model.FareEntity.FareList;
-import Model.Model;
-import View.View;
+import model.fare.FareList;
+import model.Model;
+import view.View;
 
 /**
  *
@@ -10,9 +10,9 @@ import View.View;
  * @version 1.0
  */
 public class Controller {
-    Model model;
-    View view;
-    FareList fareList;
+    private Model model;
+    private View view;
+    private FareList fareList;
 
 
     public Controller(Model model, View view){
@@ -33,10 +33,5 @@ public class Controller {
                                             fareList.toString()));
         view.printMessage(fareList.findFareClientsLessThen(10).toString());
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.BYE_MESSAGE)));
-
-
-
     }
-
-
 }

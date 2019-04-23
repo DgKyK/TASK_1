@@ -1,11 +1,12 @@
-package Model.FareEntity;
+package model.fare;
 
-import Controller.GlobalConstants;
+import controller.GlobalConstants;
 import DB.DBFare;
-import Model.Client.ClientBuilder;
-import View.View;
+import model.client.ClientBuilder;
+import view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FareList {
     private View view;
@@ -50,10 +51,10 @@ public class FareList {
         return result;
     }
 
-    public ArrayList<MoBilFare> findFareClientsLessThen(int numberOfClient){
+    public List<MoBilFare> findFareClientsLessThen(int numberOfClient){
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.FIND_FARE),
                                             String.valueOf(numberOfClient)));
-        ArrayList<MoBilFare> result = new ArrayList<>();
+        List<MoBilFare> result = new ArrayList<>();
         for(int i = 0; i < this.fareList.size(); i++){
             if(numberOfClient >= fareList.get(i).calculateClients()){
                 result.add(fareList.get(i));

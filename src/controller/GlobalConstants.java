@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 public interface GlobalConstants {
     String HELLO_MESSAGE = "info.hello";
