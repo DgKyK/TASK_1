@@ -21,6 +21,7 @@ public class Controller {
     }
 
     public void startAction(){
+        int clientBarierToFilter = 10;
         view.printMessage(View.bundle.getString(GlobalConstants.HELLO_MESSAGE));
         model.createFareList();
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.THERE_IS_RANDOM_LIST),
@@ -30,7 +31,9 @@ public class Controller {
         model.sortByMonthPay();
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.SORTED_BY_PAYMENT),
                                             model.getFareList().toString()));
-        view.printMessage(model.findFareClientsLessThen(10).toString());
+        view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.FIND_FARE),
+                String.valueOf(clientBarierToFilter)));
+        view.printMessage(model.findFareClientsLessThen(clientBarierToFilter).toString());
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.BYE_MESSAGE)));
     }
 }
