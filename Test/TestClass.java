@@ -1,24 +1,26 @@
+import model.Model;
 import model.fare.FareList;
 import model.fare.MoBilFare;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TestClass {
     @Test
     public void testFareList(){
-        FareList test1 = new FareList();
+        Model test1 = new Model();
         test1.createFareList();
-        FareList test2 = new FareList();
+        Model test2 = new Model();
         test2.createFareList();
         Assert.assertNotEquals(test1,test2);
     }
 
     @Test
     public void testClientBuilderRandom(){
-        FareList testFarlist = new FareList();
-        ArrayList<MoBilFare> temp;
+        Model testFarlist = new Model();
+        List<MoBilFare> temp;
         for (int i = 0; i < 1000; i++){
             testFarlist.createFareList();
             temp = testFarlist.findFareClientsLessThen(1);
@@ -28,7 +30,7 @@ public class TestClass {
 
     @Test
     public void testCreateFareList(){
-        FareList test = new FareList();
+        Model test = new Model();
         Assert.assertTrue(test.createFareList());
     }
 }

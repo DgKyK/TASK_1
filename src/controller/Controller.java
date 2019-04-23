@@ -18,20 +18,19 @@ public class Controller {
     public Controller(Model model, View view){
         this.model = model;
         this.view = view;
-        this.fareList = new FareList();
     }
 
     public void startAction(){
         view.printMessage(View.bundle.getString(GlobalConstants.HELLO_MESSAGE));
-        fareList.createFareList();
+        model.createFareList();
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.THERE_IS_RANDOM_LIST),
-                                            fareList.toString()));
+                                            model.getFareList().toString()));
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.TOTAL_NUMBER_CLIENTS),
-                                            String.valueOf(fareList.calculateAllPeople())));
-        fareList.sortByMonthPay();
+                                            String.valueOf(model.calculateAllPeople())));
+        model.sortByMonthPay();
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.SORTED_BY_PAYMENT),
-                                            fareList.toString()));
-        view.printMessage(fareList.findFareClientsLessThen(10).toString());
+                                            model.getFareList().toString()));
+        view.printMessage(model.findFareClientsLessThen(10).toString());
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.BYE_MESSAGE)));
     }
 }
