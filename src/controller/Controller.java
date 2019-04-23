@@ -12,7 +12,6 @@ import view.View;
 public class Controller {
     private Model model;
     private View view;
-    private FareList fareList;
 
 
     public Controller(Model model, View view){
@@ -28,9 +27,8 @@ public class Controller {
                                             model.getFareList().toString()));
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.TOTAL_NUMBER_CLIENTS),
                                             String.valueOf(model.calculateAllPeople())));
-        model.sortByMonthPay();
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.SORTED_BY_PAYMENT),
-                                            model.getFareList().toString()));
+                                            model.sortByMonthPay().toString()));
         view.printMessage(view.stringConcat(View.bundle.getString(GlobalConstants.FIND_FARE),
                 String.valueOf(clientBarierToFilter)));
         view.printMessage(model.findFareClientsLessThen(clientBarierToFilter).toString());

@@ -1,8 +1,6 @@
 package model.fare;
 
 import model.client.Client;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class MoBilFare implements Fare {
@@ -19,7 +17,6 @@ public abstract class MoBilFare implements Fare {
 
         this.monthPay = monthPay;
     }
-
 
     /* Getters */
     public String getFareName() {

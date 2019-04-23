@@ -6,8 +6,8 @@ import model.fare.FareList;
 import model.fare.FeelFreeFare;
 import model.fare.MoBilFare;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Model {
     private FareList fareList;
@@ -30,25 +30,15 @@ public class Model {
     }
 
     public int calculateAllPeople(){
-        int result = 0;
-        for(MoBilFare current : fareList.getFareList()){
-            result += current.calculateClients();
-        }
-        return result;
+        return fareList.getFareList().stream().map( x -> x.getClientsList().size()).mapToInt(Integer::intValue).sum();
     }
 
     public List<MoBilFare> findFareClientsLessThen(int numberOfClient){
-        List<MoBilFare> result = new ArrayList<>();
-        for(int i = 0; i < fareList.getFareList().size(); i++){
-            if(numberOfClient > fareList.getFareList().get(i).calculateClients()){
-                result.add(fareList.getFareList().get(i));
-            }
-        }
-        return result;
+        return fareList.getFareList().stream().filter( x -> x.calculateClients() < numberOfClient).collect(Collectors.toList());
     }
 
-    public void sortByMonthPay(){
-        fareList.getFareList().sort(((o1, o2) -> (int)(o1.getMonthPay() - o2.getMonthPay())));
+    public List<MoBilFare> sortByMonthPay(){
+        return fareList.getFareList().stream().sorted((o1, o2) -> (int)(o1.getMonthPay() - o2.getMonthPay())).collect(Collectors.toList());
     }
 
     public FareList getFareList() {

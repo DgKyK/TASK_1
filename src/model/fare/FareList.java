@@ -1,17 +1,14 @@
 package model.fare;
-import view.View;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FareList {
-    private View view;
     private List<MoBilFare> fareList;
 
     public FareList(){
-        view = new View();
         fareList = new ArrayList<>();
-
     }
 
     public FareList(ArrayList<MoBilFare> fareList){
